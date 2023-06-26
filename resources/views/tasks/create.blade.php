@@ -20,7 +20,7 @@
                         <div class="text-red-600 text-sm">{{ $message }}</div>
                     @enderror
 
-                    <x-input type="date" name="deadline" field="deadline" placeholder="" class="w-10" autocomplete="off"></x-input>
+                    <x-input type="date" name="deadline" field="deadline" placeholder="" class="w-40" autocomplete="off"></x-input>
                     @error('title')
                         <div class="text-red-600 text-sm">{{ $message }}</div>
                     @enderror

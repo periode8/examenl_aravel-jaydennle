@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Tasks>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Task>
  */
-class TasksFactory extends Factory
+class TaskFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,7 +18,7 @@ class TasksFactory extends Factory
     {
         return [
             'id' => fake()->unique()->id(),
-            'user_id' => UserFactory::Factory(),
+            'user_id' => fake()->name(),
             'title' => fake()->unique()->title(),
             'text' => fake()->paragraph(),
             'deadline' => fake()->date(),
