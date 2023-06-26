@@ -10,8 +10,8 @@
             <a href="{{ route('tasks.create') }}" class="btn-link btn-lg mb-2">+ New Note</a>
             @foreach ($tasks as $task)
                 <div class="my-6 p-6 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg">
-                    <h2>
-                        {{ $task->title }}
+                    <h2 class="font-bold text-2xl">
+                        <a href="{{ route('tasks.show', $task) }}">{{ $task->title }}</a>
                     </h2>
                     <p>
                         {{ Str::limit( $task->text, 200 ) }}

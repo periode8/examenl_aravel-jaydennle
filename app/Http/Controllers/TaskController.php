@@ -31,7 +31,22 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:120',
+            'text' => 'required'
+        ]);
+
+        $task = new Task([
+        'user_id' => Auth::id(),
+        'title' => $request->title,
+        'text' => $request->text,
+        'deadline' => $request->deadline
+    ]);
+    $task->save();
+
+    return to_route('tasks.index');
+
+
     }
 
     /**
@@ -39,7 +54,7 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
-        //
+        return view('tasks.show')->with('tasks', $task);
     }
 
     /**
@@ -47,7 +62,7 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        //
+        return view('tasks.edit')->with('task', $task);
     }
 
     /**
