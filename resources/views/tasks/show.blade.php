@@ -25,6 +25,12 @@
 
                 </p><br>
                 <a href="{{ route('tasks.edit', $tasks) }}"  class="btn-link ml-auto">Edit Note</a>
+
+                <form action="{{ route('tasks.destroy', $tasks) }}" method="post" class="pt-2">
+                    @method('delete')
+                    @csrf
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you wish to delete this note?')">Delete Task</button>
+                </form>
             </div>
         </div>
     </div>
